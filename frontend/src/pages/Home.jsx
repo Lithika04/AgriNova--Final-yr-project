@@ -10,7 +10,7 @@ const Home = () => {
     const sections = [
         {
             title: t('recommendation_system'),
-            description: "Get personalized tech, crop, and scheme advice based on your farm profile.",
+            description: t('recommendation_desc'),
             icon: Sprout,
             color: "bg-primary",
             active: true,
@@ -18,14 +18,14 @@ const Home = () => {
         },
         {
             title: t('chatbot'),
-            description: "Ask farming related questions to our AI expert. (" + t('coming_soon') + ")",
+            description: t('chatbot_desc') + " (" + t('coming_soon') + ")",
             icon: MessageSquare,
             color: "bg-gray-400",
             active: false
         },
         {
             title: t('simulation'),
-            description: "Visualize your farm yield with high-tech sensors. (" + t('coming_soon') + ")",
+            description: t('simulation_desc') + " (" + t('coming_soon') + ")",
             icon: Box,
             color: "bg-gray-400",
             active: false

@@ -130,7 +130,7 @@ const Dashboard = () => {
                                 {t(`options.${analysis.level}`)} {t('LEVEL')}
                             </span>
                             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
-                                {t('Ahead of')} <span className="text-primary">{analysis.ahead_of}%</span> {t('of farmers in')} {t(`districts.${profile.district}`)} {t('district')}.
+                                {t('Ahead of')} <span className="text-primary">{analysis.ahead_of}%</span> {t('of farmers in')} {t(`districts.${profile.district}`)} {t('district_level')}.
                             </h3>
                             <p className="text-gray-500 text-base leading-relaxed max-w-xl">
                                 {t('Improve water efficiency and market access to reach the top tier and unlock higher scheme benefits.')}

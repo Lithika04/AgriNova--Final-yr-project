@@ -80,17 +80,17 @@ const ProfileForm = () => {
             case 1:
                 return (
                     <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
-                        <div><label className="block text-sm font-bold mb-1">{t('Full Name') || 'Full Name'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('farmerName')}</label>
                             <input type="text" name="name" value={formData.name} onChange={handleChange} className="input-field" placeholder="John Doe" /></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Age') || 'Age'} (18-80)</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Age Range')}</label>
                             <input type="number" name="age" value={formData.age} onChange={handleChange} className="input-field" min="18" max="80" /></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Gender') || 'Gender'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('gender')}</label>
                             <select name="gender" value={formData.gender} onChange={handleChange} className="input-field">{renderOptions(['Male', 'Female', 'Other'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Education Level') || 'Education Level'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('education')}</label>
                             <select name="education" value={formData.education} onChange={handleChange} className="input-field">{renderOptions(['No Education', 'Primary', 'High School', 'Diploma', 'Degree'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Farming Experience') || 'Farming Experience'} ({formData.farming_exp} {t('years')})</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Farming Experience Years', { years: formData.farming_exp })}</label>
                             <input type="range" name="farming_exp" value={formData.farming_exp} onChange={handleChange} min="0" max="50" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" /></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('District') || 'District'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('district')}</label>
                             <select name="district" value={formData.district} onChange={handleChange} className="input-field">
                                 <option value="Select District">{t('options.Select District') || 'Select District'}</option>
                                 {Object.keys(t('districts', { returnObjects: true }) || {}).map(d => (
@@ -102,86 +102,86 @@ const ProfileForm = () => {
             case 2:
                 return (
                     <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
-                        <div><label className="block text-sm font-bold mb-1">{t('Total Land Size') || 'Total Land Size'} (Acres)</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Total Land Size Acres')}</label>
                             <input type="number" step="0.1" name="land_size" value={formData.land_size} onChange={handleChange} className="input-field" /></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Land Type') || 'Land Type'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('landType')}</label>
                             <select name="land_type" value={formData.land_type} onChange={handleChange} className="input-field">{renderOptions(['Wet', 'Dry', 'Mixed'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Soil Type') || 'Soil Type'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('soilType')}</label>
                             <select name="soil_type" value={formData.soil_type} onChange={handleChange} className="input-field">{renderOptions(['Red', 'Black', 'Alluvial', 'Sandy'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Current Crops') || 'Current Crops'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('currentCrop')}</label>
                             <select name="current_crops" value={formData.current_crops} onChange={handleChange} className="input-field">{renderOptions(['Paddy', 'Maize', 'Cotton', 'Sugarcane', 'Groundnut', 'Banana'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Avg Yield') || 'Avg Yield'} (kg/acre)</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Avg Yield KG')}</label>
                             <input type="number" name="avg_yield" value={formData.avg_yield} onChange={handleChange} className="input-field" /></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Farming Type') || 'Farming Type'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('farmingType')}</label>
                             <select name="farming_type" value={formData.farming_type} onChange={handleChange} className="input-field">{renderOptions(['Traditional', 'Organic', 'Mixed'])}</select></div>
                     </div>
                 );
             case 3:
                 return (
                     <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
-                        <div><label className="block text-sm font-bold mb-1">{t('Irrigation Type') || 'Irrigation Type'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('irrigationType')}</label>
                             <select name="irrigation_type" value={formData.irrigation_type} onChange={handleChange} className="input-field">{renderOptions(['Rain-fed', 'Drip', 'Sprinkler', 'Canal', 'Borewell'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Water Source') || 'Water Source'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('waterSource')}</label>
                             <select name="water_source" value={formData.water_source} onChange={handleChange} className="input-field">{renderOptions(['River', 'Borewell', 'Tank', 'Rainwater'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Water Usage') || 'Water Usage'} (Litres/day)</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Water Usage Litres')}</label>
                             <input type="number" name="water_usage" value={formData.water_usage} onChange={handleChange} className="input-field" /></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Annual Rainfall') || 'Annual Rainfall'} (mm/year)</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Annual Rainfall MM')}</label>
                             <input type="number" name="rainfall" value={formData.rainfall} onChange={handleChange} className="input-field" /></div>
                     </div>
                 );
             case 4:
                 return (
                     <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
-                        <div><label className="block text-sm font-bold mb-1">{t('Annual Income') || 'Annual Income'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Annual Income')}</label>
                             <select name="income_range" value={formData.income_range} onChange={handleChange} className="input-field">{renderOptions(['<₹50k', '₹50k–1L', '₹1L–3L', '₹3L–5L', '>₹5L'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Loan Access') || 'Access to Loan?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Loan Access')}</label>
                             <select name="loan_access" value={formData.loan_access} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Crop Insurance') || 'Crop Insurance?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Crop Insurance')}</label>
                             <select name="crop_insurance" value={formData.crop_insurance} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Savings Habit') || 'Savings Habit'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Savings Habit')}</label>
                             <select name="savings_habit" value={formData.savings_habit} onChange={handleChange} className="input-field">{renderOptions(['Low', 'Medium', 'High'])}</select></div>
                     </div>
                 );
             case 5:
                 return (
                     <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
-                        <div><label className="block text-sm font-bold mb-1">{t('Uses Machinery') || 'Uses Machinery?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Uses Machinery')}</label>
                             <select name="use_machinery" value={formData.use_machinery} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Uses Drip/Sprinkler') || 'Uses Drip/Sprinkler?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Uses Drip/Sprinkler')}</label>
                             <select name="use_drip" value={formData.use_drip} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Uses Mobile Apps') || 'Uses Mobile Apps?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Uses Mobile Apps')}</label>
                             <select name="use_mobile_apps" value={formData.use_mobile_apps} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Internet Access') || 'Internet Access?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Internet Access')}</label>
                             <select name="internet_access" value={formData.internet_access} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('No. of Technologies Used') || 'No. of Technologies Used'} ({formData.tech_usage_count})</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('No. of Technologies Used Count', { count: formData.tech_usage_count })}</label>
                             <input type="range" name="tech_usage_count" value={formData.tech_usage_count} onChange={handleChange} min="0" max="10" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" /></div>
                     </div>
                 );
             case 6:
                 return (
                     <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
-                        <div><label className="block text-sm font-bold mb-1">{t('Aware of Govt Schemes') || 'Aware of Govt Schemes?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Aware of Govt Schemes')}</label>
                             <select name="scheme_awareness" value={formData.scheme_awareness} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Enrolled in PM-KISAN') || 'Enrolled in PM-KISAN?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Enrolled in PM-KISAN')}</label>
                             <select name="enrolled_pm_kisan" value={formData.enrolled_pm_kisan} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Enrolled in TN Schemes') || 'Enrolled in TN Schemes?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Enrolled in TN Schemes')}</label>
                             <select name="enrolled_tn_schemes" value={formData.enrolled_tn_schemes} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Member of SHG') || 'Member of SHG?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Member of SHG')}</label>
                             <select name="member_shg" value={formData.member_shg} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Women Farmer') || 'Women Farmer?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Women Farmer')}</label>
                             <select name="women_farmer" value={formData.women_farmer} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
                     </div>
                 );
             case 7:
                 return (
                     <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
-                        <div><label className="block text-sm font-bold mb-1">{t('Willing to Adopt Tech') || 'Willing to Adopt Tech?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Willing to Adopt Tech')}</label>
                             <select name="will_adopt_new_tech" value={formData.will_adopt_new_tech} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'Maybe', 'No'])}</select></div>
                         <div><label className="block text-sm font-bold mb-1">{t('Risk Level') || 'Risk Level'}</label>
                             <select name="risk_level" value={formData.risk_level} onChange={handleChange} className="input-field">{renderOptions(['Low', 'Medium', 'High'])}</select></div>
                         <div><label className="block text-sm font-bold mb-1">{t('Climate Concern') || 'Climate Concern'}</label>
                             <select name="climate_concern" value={formData.climate_concern} onChange={handleChange} className="input-field">{renderOptions(['Low', 'Medium', 'High'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Interested in Training') || 'Interested in Training?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Interested in Training')}</label>
                             <select name="interested_training" value={formData.interested_training} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
                     </div>
                 );
@@ -190,9 +190,9 @@ const ProfileForm = () => {
                     <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
                         <div><label className="block text-sm font-bold mb-1">{t('Selling Method') || 'Selling Method'}</label>
                             <select name="selling_method" value={formData.selling_method} onChange={handleChange} className="input-field">{renderOptions(['Local', 'Mandi', 'Direct', 'Online'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Storage Facility') || 'Storage Facility?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Storage Facility')}</label>
                             <select name="storage_facility" value={formData.storage_facility} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
-                        <div><label className="block text-sm font-bold mb-1">{t('Transport Access') || 'Transport Access?'}</label>
+                        <div><label className="block text-sm font-bold mb-1">{t('Transport Access')}</label>
                             <select name="transport_access" value={formData.transport_access} onChange={handleChange} className="input-field">{renderOptions(['Yes', 'No'])}</select></div>
                         <div><label className="block text-sm font-bold mb-1">{t('Price Awareness') || 'Price Awareness'}</label>
                             <select name="price_awareness" value={formData.price_awareness} onChange={handleChange} className="input-field">{renderOptions(['Low', 'Medium', 'High'])}</select></div>
